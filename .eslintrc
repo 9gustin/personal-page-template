@@ -13,6 +13,15 @@
     }
   },
   "rules": {
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": "always",
+        "ObjectPattern": { "multiline": true },
+        "ImportDeclaration": { "multiline": true, "minProperties": 4 },
+        "ExportDeclaration": "never"
+      }
+    ],
     "object-curly-spacing": ["warn", "always"],
     "no-unused-vars": [
       "warn",

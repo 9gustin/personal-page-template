@@ -1,7 +1,7 @@
 import Header from 'app/components/Header';
 import React from 'react';
 
-function App() {
+function Home(): JSX.Element {
   return (
     <>
       <Header />
@@ -9,4 +9,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

@@ -8,12 +8,12 @@ export const LANGS: Lang[] = [
   {
     key: 'es',
     name: 'Español',
-    default: true,
+    default: true
   },
   {
     key: 'en',
-    name: 'English',
-  },
+    name: 'English'
+  }
 ];
 
 export const DEFAULT_LANG: Lang = LANGS.find((l) => l.default) ?? LANGS[0];

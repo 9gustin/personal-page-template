@@ -1,8 +1,8 @@
 import React from 'react';
-import Home from './pages/Home';
+import AppRouter from './components/Router';
 
 function App(): JSX.Element {
-  return <Home />;
+  return <AppRouter />;
 }
 
 export default App;
