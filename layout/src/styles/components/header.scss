@@ -1,15 +1,118 @@
-.header{
-  display: flex;
+@import "../variables";
 
-  .brand{
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+  99%{
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+  }
+  100%{
+    border: none;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
 
+.header {
+  display: grid;
+  grid-template-areas:
+    "brand menu"
+    "header-main header-main";
+  grid-template-rows: 10% 90%;
+  min-height: 100vh;
+
+  .brand {
+    align-self: flex-start;
+    color: $main-color;
+    font-size: $medium-font-size;
+    grid-area: brand;
+    justify-self: flex-start;
+    padding: 10px;
   }
 
-  .menu{
+  .menu {
+    align-self: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: menu;
+    list-style: none;
+    justify-self: flex-end;
+    margin: 0;
+    padding: 0;
 
+    .option{
+      display: flex;
+      padding: 5px;
+
+      .link{
+        border-radius: 8px;
+        font-size: $normal-font-size;
+        min-width: 90px;
+        padding: 10px;
+        transition: background-color .8s;
+
+        &:hover {
+          background-color: $light-background-color;
+        }
+      }
+    }
   }
 
-  .header-main{
-    
+  .header-main {
+    align-self: center;
+    grid-area: header-main;
+    width: fit-content;
+    padding-left: 30px;
+
+    .title{
+      animation: typewriter 1.5s steps(44) 1s 1 normal both,
+      blinkTextCursor 500ms steps(44) infinite normal;
+      border-right: 2px solid rgba(255, 255, 255, 0.75);
+      font-size: $xlong-font-size;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+
+      .name{
+        color: $main-color;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .header {
+    grid-template-areas:
+      "brand"
+      "header-main"
+      "menu";
+    grid-template-rows: 10% 45% 45%;
+
+    .header-main{
+      align-self: flex-end;
+
+      .title {
+        font-size: $long-font-size;
+      }
+    }
+
+    .menu {
+      justify-self: auto;
+
+      .option, 
+      .option .link{ 
+        width: 100%;
+      }
+    }
   }
 }
