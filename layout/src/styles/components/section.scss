@@ -1,4 +1,17 @@
 .section {
+
+  &.align {
+    max-width: 900px;
+  }
+
+  &.align.align-right {
+    margin-left: auto;
+  }
+
+  &.align.align-left {
+    margin-right: auto;
+  }
+
   .section-title {
     align-items: center;
     display: flex;
@@ -51,11 +64,19 @@
 
 @media (max-width: $tablet-breakpoint) {
   .section {
+
+    &.align {
+      max-width: 100%;
+    }
+
     .section-info {
       justify-content: center;
       grid-template-areas:
         "icon"
         "text";
+      margin: auto;
+      max-width: 600px;
+      padding: 15px;
 
       .icon {
         justify-self: center;
