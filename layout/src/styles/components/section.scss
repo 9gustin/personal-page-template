@@ -1,18 +1,18 @@
-.section{
-
-  .section-title{
+.section {
+  .section-title {
     align-items: center;
     display: flex;
     font-size: $medium-font-size;
+    font-weight: 400;
     margin-left: 10px;
 
-    &::before{
-      content: "·";
+    &.boy-emoji::before {
+      content: "👦";
       margin-right: 15px;
       color: $main-color;
     }
 
-    &::after{
+    &::after {
       background-color: $main-color;
       content: "";
       display: block;
@@ -22,8 +22,49 @@
     }
   }
 
-  .section-text {
-    font-size: $normal-font-size;
-    margin: 50px 10px;
+  .section-info {
+    font-weight: 300;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: "text icon";
+    margin: 20px 10px;
+
+    .icon {
+      border-radius: 5px;
+      grid-area: icon;
+      max-width: 90%;
+      opacity: 0.75;
+      transition: opacity 0.8s;
+      width: 400px;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .section-text {
+      grid-area: text;
+      font-size: $normal-font-size;
+    }
+  }
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .section {
+    .section-info {
+      justify-content: center;
+      grid-template-areas:
+        "icon"
+        "text";
+
+      .icon {
+        justify-self: center;
+        max-width: 70%;
+      }
+
+      .section-text {
+        margin: 0;
+      }
+    }
   }
 }
