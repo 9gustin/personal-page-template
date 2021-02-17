@@ -1,5 +1,7 @@
 .section {
 
+  margin-bottom: 200px;
+
   &.align {
     max-width: 900px;
   }
@@ -22,7 +24,11 @@
     &.boy-emoji::before {
       content: "👦";
       margin-right: 15px;
-      color: $main-color;
+    }
+
+    &.blog-emoji::before{
+      content: "⌨️";
+      margin-right: 15px;
     }
 
     &::after {
