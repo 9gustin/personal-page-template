@@ -8,3 +8,9 @@ i18next.use(initReactI18next).init({
 });
 
 export default i18next;
+
+function requireAll(requireContext: __WebpackModuleApi.RequireContext) {
+  return requireContext.keys().map(requireContext);
+}
+
+requireAll(require.context('..', true, /i18n\.(js|ts)$/));

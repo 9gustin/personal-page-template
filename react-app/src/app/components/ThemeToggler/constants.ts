@@ -1,10 +1,12 @@
+import i18next from 'i18next';
+
 export const THEMES = [
   {
     value: 'dark',
-    name: 'DarkTheme'
+    name: i18next.t('Theme:Dark')
   },
   {
     value: 'light',
-    name: 'LightTheme'
+    name: i18next.t('Theme:Light')
   }
 ];
