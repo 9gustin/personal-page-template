@@ -6,3 +6,6 @@ import './styles/app.scss';
 import './img/icon.jpg';
 
 window.onload = () => console.log('App running :D');
+
+const x = '';
+x.trim();

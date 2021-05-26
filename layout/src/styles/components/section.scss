@@ -1,5 +1,4 @@
 .section {
-
   margin-bottom: 200px;
 
   &.align {
@@ -13,64 +12,126 @@
   &.align.align-left {
     margin-right: auto;
   }
+}
 
-  .section-title {
-    align-items: center;
-    display: flex;
-    font-size: $medium-font-size;
-    font-weight: 400;
-    margin-left: 10px;
+.section-title {
+  align-items: center;
+  display: flex;
+  font-size: $medium-font-size;
+  font-weight: 400;
+  margin-left: 10px;
 
-    &.boy-emoji::before {
-      content: "👦";
-      margin-right: 15px;
-    }
+  &.boy-emoji::before {
+    content: "👦";
+    margin-right: 15px;
+  }
 
-    &.blog-emoji::before{
-      content: "⌨️";
-      margin-right: 15px;
-    }
+  &.blog-emoji::before {
+    content: "⌨️";
+    margin-right: 15px;
+  }
 
-    &::after {
-      background-color: $main-color;
-      content: "";
-      display: block;
-      height: 1px;
-      margin: 0 15px;
-      width: 100%;
+  &::after {
+    background-color: $main-color;
+    content: "";
+    display: block;
+    height: 1px;
+    margin: 0 15px;
+    width: 100%;
+  }
+}
+
+.section-info {
+  font-weight: 300;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: "text icon";
+  margin: 20px 10px;
+
+  .icon {
+    border-radius: 5px;
+    grid-area: icon;
+    max-width: 90%;
+    opacity: 0.75;
+    transition: opacity 0.8s;
+    width: 400px;
+
+    &:hover {
+      opacity: 1;
     }
   }
 
-  .section-info {
-    font-weight: 300;
-    display: grid;
-    grid-gap: 20px;
-    grid-template-areas: "text icon";
-    margin: 20px 10px;
+  .section-text {
+    grid-area: text;
+    font-size: $normal-font-size;
+  }
+}
 
-    .icon {
-      border-radius: 5px;
-      grid-area: icon;
-      max-width: 90%;
-      opacity: 0.75;
-      transition: opacity 0.8s;
-      width: 400px;
+.items {
+  padding: 0 30px;
 
-      &:hover {
-        opacity: 1;
-      }
+  .item {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 25px 0;
+    opacity: 0.85;
+    transition: all 0.4s;
+
+    .title {
+      font-weight: 300;
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 80%;
     }
 
-    .section-text {
-      grid-area: text;
-      font-size: $normal-font-size;
+    .subtitle {
+      font-size: 0.85rem;
+      margin: 10px 25px;
+      opacity: 0.6;
+      width: 100%;
+    }
+
+    &::before {
+      background-color: $main-color;
+      border-radius: 2px;
+      content: "";
+      height: 10px;
+      margin: 3px 10px;
+      width: 10px;
+    }
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.04);
+    }
+  }
+}
+
+.section-link {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  .link {
+    border-radius: 4px;
+    transition: 0.8s;
+    text-align: center;
+    padding: 5px 20px;
+    width: 60%;
+
+    &:hover {
+      background-color: $main-color;
+      color: $background-color;
+      transform: scale(1.1);
     }
   }
 }
 
 @media (max-width: $tablet-breakpoint) {
   .section {
-
     &.align {
       max-width: 100%;
     }
